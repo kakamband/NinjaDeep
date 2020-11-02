@@ -182,7 +182,9 @@ async def upstream(ups):
             await ups.edit(f"{txt}\n`Here is the error log:\n{error}`")
             repo.__del__()
             return
-        await ups.edit("`Successfully Updated!\n" "Restarting NinjaDeep, please wait...`")
+        await ups.edit(
+            "`Successfully Updated!\n" "Restarting NinjaDeep, please wait...`"
+        )
     else:
         # Classic Updater, pretty straightforward.
         try:

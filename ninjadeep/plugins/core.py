@@ -150,7 +150,8 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await event.client.get_messages(event.chat_id, ids=mxo), "ninjadeep/plugins/"
+            await event.client.get_messages(event.chat_id, ids=mxo),
+            "ninjadeep/plugins/",
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)

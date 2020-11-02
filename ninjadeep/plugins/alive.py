@@ -74,7 +74,9 @@ async def amireallyalive(alive):
         tele += f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
         tele += "` 🔸 Database Status:` **All OK 👌!**\n"
         tele += f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-        tele += "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+        tele += (
+            "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+        )
 
         await alive.get_chat()
         await alive.delete()
