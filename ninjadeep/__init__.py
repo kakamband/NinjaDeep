@@ -1,5 +1,5 @@
 #    NinjaDeep - UserBot
-#    Copyright (C) 2020 ninjadeep
+#    Copyright (C) 2020 NinjaDeep
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -16,50 +16,51 @@
 
 import html
 import time
+from datetime import datetime
+
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from ninjadeep import ALIVE_NAME
+
+from ninjadeep import ALIVE_NAME, telever
 from ninjadeep.__init__ import StartTime
-from datetime import datetime
+from ninjadeep.ninjadeepConfig import Config, Var
+from ninjadeep.utils import admin_cmd, sudo_cmd
 
-# /start
-started = f"**Welcome To NinjaDeep**\nHi, this is the assistant bot of {ALIVE_NAME}.\nSend `/help` to see what you can do here!\n\n(c) @NinjaDeepSUPPORT"
+# stats
+if Config.PRIVATE_GROUP_BOT_API_ID:
+    log = "Enabled"
+else:
+    log = "Disabled"
 
-# /help
-helpmefast = "Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepOT/14)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own ninjadeep via @ninjadeepSupport to get such amazing features and more!__"
+if Config.TG_BOT_USER_NAME_BF_HER:
+    bots = "Enabled"
+else:
+    bots = "Disabled"
 
-# /ping
+if Var.LYDIA_API_KEY:
+    lyd = "Enabled"
+else:
+    lyd = "Disabled"
 
+if Config.SUDO_USERS:
+    sudo = "Disabled"
+else:
+    sudo = "Enabled"
 
-def get_readable_time(seconds: int) -> str:
-    count = 0
-    ping_time = ""
-    time_list = []
-    time_suffix_list = ["s", "m", "h", "days"]
+if Var.PMSECURITY.lower() == "off":
+    pm = "Disabled"
+else:
+    pm = "Enabled"
 
-    while count < 4:
-        count += 1
-        if count < 3:
-            remainder, result = divmod(seconds, 60)
-        else:
-            remainder, result = divmod(seconds, 24)
-        if seconds == 0 and remainder == 0:
-            break
-        time_list.append(int(result))
-        seconds = int(remainder)
+TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@NinjaDeepSUPPORT"
 
-    for x in range(len(time_list)):
-        time_list[x] = str(time_list[x]) + time_suffix_list[x]
-    if len(time_list) == 4:
-        ping_time += time_list.pop() + ", "
-    time_list.reverse()
-    ping_time += ":".join(time_list)
-    return ping_time
-
-
-start = datetime.now()
-end = datetime.now()
-ms = (end - start).microseconds / 1000
-forping = f"🏓Ping speed: {ms}"
+tele = f"NinjaDeep Version: {telever}\n"
+tele += f"Log Group: {log}\n"
+tele += f"Assistant Bot: {bots}\n"
+tele += f"Lydia: {lyd}\n"
+tele += f"Sudo: {sudo}\n"
+tele += f"PMSecurity: {pm}\n"
+tele += f"\nVisit @NinjaDeepSUPPORT for assistance.\n"
+telestats = f"{tele}"
