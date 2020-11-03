@@ -24,8 +24,8 @@ from telethon.tl.types import InputMessagesFilterDocument
 from ..utils import admin_cmd, load_module
 
 
-@ninjadeep.on(admin_cmd(pattern=r"installall$"))
-@ninjadeep.on(sudo_cmd(pattern=r"installall$", allow_sudo=True))
+@ninjadeep.on(admin_cmd(pattern=r"install$"))
+@ninjadeep.on(sudo_cmd(pattern=r"install$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
