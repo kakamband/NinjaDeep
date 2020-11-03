@@ -11,8 +11,8 @@ from telethon.utils import get_input_location
 from ninjadeep.utils import admin_cmd
 
 
-@ninjadeep.on(admin_cmd(pattern="whois ?(.*)"))
-@ninjadeep.on(sudo_cmd(pattern="whois ?(.*)", allow_sudo=True))
+@ninjadeep.on(admin_cmd(pattern="NinjaWhois ?(.*)"))
+@ninjadeep.on(sudo_cmd(pattern="NinjaWhois ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
