@@ -59,5 +59,5 @@ RUN mkdir /root/ninjadeep/bin/
 WORKDIR /root/ninjadeep/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
-# (c) 2020 TeleBot, by @DeepS_ViRk, @Lovedeep_ViRk
+# (c) 2020 NinjaDeep, by @DeepS_ViRk, @Lovedeep_ViRk
 CMD ["bash","./resources/startup.sh"]
