@@ -1,6 +1,6 @@
 #!/bin/bash
 #    NinjaDeep - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Copyright (C) 2020 NinjaDeep
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
