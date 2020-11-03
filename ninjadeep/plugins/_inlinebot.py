@@ -47,6 +47,7 @@ USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked a
 USER_BOT_NO_WARN = (
     f"**PM Security ~ NinjaDeep**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
+        "**You have** `{}/{}` **warnings...**"
     "{}\n"
     "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
 )
