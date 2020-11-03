@@ -31,7 +31,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg"
+    else "https://telegra.ph/Deep-11-03"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
