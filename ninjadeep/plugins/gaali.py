@@ -2,7 +2,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="gaali"))
+@ninjadeep.on(admin_cmd(pattern="gaali"))
 async def _(event):
     if event.fwd_from:
         return
