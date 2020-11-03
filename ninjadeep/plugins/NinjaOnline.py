@@ -18,9 +18,9 @@ ONLINESTR = [
 ]
 
 
-@ninjadeep.on(admin_cmd(outgoing=True, pattern="online"))
-@ninjadeep.on(sudo_cmd(allow_sudo=True, pattern="online"))
-async def online(event):
+@ninjadeep.on(admin_cmd(outgoing=True, pattern="NinjaOnline"))
+@ninjadeep.on(sudo_cmd(allow_sudo=True, pattern="NinjaOnline"))
+async def NinjaOnline(event):
     """ Greet everyone! """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await eor(event, random.choice(ONLINESTR))
