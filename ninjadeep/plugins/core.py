@@ -26,8 +26,8 @@ from ninjadeep.utils import admin_cmd, load_module, remove_plugin
 from .. import ALIVE_NAME
 
 DELETE_TIMEOUT = 5
-thumb_image_path = "./resources/ninjadeep.png"
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ninjadeep User"
+thumb_image_path = "./resources/NinjaDeep.png"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 
 
 @ninjadeep.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
@@ -53,7 +53,7 @@ async def send(event):
         end = datetime.now()
         time_taken_in_ms = (end - start).seconds
         await pro.edit(
-            f"**► Plugin Name:** `{input_str}`\n**► Uploaded in {time_taken_in_ms} seconds.**\n**► Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n\n© @ninjadeepSupport"
+            f"**► Plugin Name:** `{input_str}`\n**► Uploaded in {time_taken_in_ms} seconds.**\n**► Uploaded by:** [🇮🇳Lovedeep ViRk🇮🇳](tg://user?id=1324185738{hmm})\n\n© @NinjaDeepSupport"
         )
         await asyncio.sleep(DELETE_TIMEOUT)
         await event.delete()
