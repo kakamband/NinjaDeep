@@ -22,13 +22,13 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "ml"
+        lan = input_str or "pa"
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
         await eor(
             event,
-            f"`{CMD_HNDLR}tr LanguageCode` as reply to a message.\nLanguage codes can be found [here](https://t.me/ninjadeepHelpChat/22678)",
+            f"`{CMD_HNDLR}tr LanguageCode` as reply to a message.\nLanguage codes can be found [here](https://t.me/NinjaDeepSUPPORT)",
         )
         return
     text = emoji.demojize(text.strip())
@@ -39,7 +39,7 @@ async def _(event):
         after_tr_text = translated.text
         # TODO: emojify the :
         # either here, or before translation
-        output_str = """**Translated by ninjadeep**\nFrom {} to {}
+        output_str = """**Translated by NinjaDeep**\nFrom {} to {}
 {}""".format(
             translated.src, lan, after_tr_text
         )
