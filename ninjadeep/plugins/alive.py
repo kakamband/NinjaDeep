@@ -67,14 +67,16 @@ async def amireallyalive(alive):
     if ALV_PIC:
         tele = f"**Welcome To NinjaDeep **\n\n"
         tele += "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
-        tele += "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-        tele += f"` 🔸 NinjaDeep Version:` **{telever}**\n"
-        tele += "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
-        tele += f"` 🔸 Sudo :` **{sudo}**\n"
-        tele += f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
-        tele += "` 🔸 Database Status:` **All OK 👌!**\n"
-        tele += f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-        tele += "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+        tele += "` ➥🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
+        tele += f"` ➥🔸 NinjaDeep Version:` **{telever}**\n"
+        tele += "` ➥🔹 More Info:` **@NinjaDeepSUPPORT**\n"
+        tele += f"` ➥🔸 Sudo :` **{sudo}**\n"
+        tele += f"` ➥🔹 NinjaDeep Uptime:` **{uptime}**\n"
+        tele += "` ➥🔸 Database Status:` **All OK 👌!**\n"
+        tele += f"` ➥🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
+        tele += "  ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+        tele += f" ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
+        tele += f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
 
         await alive.get_chat()
         await alive.delete()
@@ -82,7 +84,7 @@ async def amireallyalive(alive):
         await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg")
+    req = requests.get("https://telegra.ph/19Ni822628nja3837Deeppng-11-04")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
@@ -95,14 +97,17 @@ async def amireallyalive(alive):
             alive.chat_id,
             f"**Welcome To NinjaDeep **\n\n"
             "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
-            "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-            f"` 🔸 NinjaDeep Version:` **{telever}**\n"
-            "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
-            f"` 🔸 Sudo :` **{sudo}**\n"
-            f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
-            "` 🔸 Database Status:` **All OK 👌!**\n"
-            f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)",
+            "` ➥🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
+            f"` ➥🔸 NinjaDeep Version:` **{telever}**\n"
+            "` ➥🔹 More Info:` **@NinjaDeepSUPPORT**\n"
+            f"` ➥🔸 Sudo :` **{sudo}**\n"
+            f"` ➥🔹 NinjaDeep Uptime:` **{uptime}**\n"
+            "` ➥🔸 Database Status:` **All OK 👌!**\n"
+            f"` ➥🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
+            "`  ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+            f"` ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
+            f"` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
