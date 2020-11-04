@@ -87,6 +87,13 @@ async def _(event):
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
+                try:
+            await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+            first_name=f"「AFK」 {telname}",
+            last_name = ""
+        ))
+        except Exception as e:  # pylint:disable=C0103,W0703
+            await event.edit(str(e))
         if reason:
             await event.edit(
                 f"`Your status has been set to AFK With [NINJADEEP🇮🇳].`\n**Reason** - __{reason}__"
