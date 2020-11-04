@@ -214,7 +214,7 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "ml"
+        lan = input_str or "pa"
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
@@ -367,7 +367,7 @@ async def _(givelogs):
     if givelogs.sender_id == bot.uid:
         await tgbot.send_file(
             givelogs.chat_id,
-            "logs.txt",
+            "logs-NinjaDeep.txt",
             reply_to=givelogs.id,
             caption="[Heroku] NinjaDeep Logs",
             buttons=[
@@ -379,4 +379,4 @@ async def _(givelogs):
             [Button.url("Deploy Your NinjaDeep", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep")]
         ])
     await asyncio.sleep(5)
-    return os.remove('logs.txt')
+    return os.remove('logs-NinjaDeep.txt')
