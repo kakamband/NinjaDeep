@@ -46,7 +46,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice By NinjaDeep.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
     f"**PM Security ~ NinjaDeep**\n\nNice to see you here, but  "
-    "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
+    "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message From NinjaDeep.\n\n"
     "{}\n"
     "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
 )
