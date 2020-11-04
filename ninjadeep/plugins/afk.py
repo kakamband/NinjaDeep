@@ -1,6 +1,5 @@
-#    ninjadeep - UserBot
-#    Copyright (C) 2020 ninjadeep
-
+#    NinjaDeep - UserBot
+#    Copyright (C) 2020 NinjaDeep
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -15,7 +14,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-AFK Plugin for ninjadeep
+AFK Plugin for NinjaDeep
 Syntax: .afk REASON
 """
 
@@ -28,7 +27,7 @@ from telethon.tl import functions, types
 from ninjadeep import ALIVE_NAME
 from ninjadeep.utils import admin_cmd
 
-ALIVE_NAME = str(ALIVE_NAME) if ALIVE_NAME else "ninjadeep User"
+ALIVE_NAME = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
@@ -49,7 +48,7 @@ async def set_not_afk(event):
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "Set AFK mode to False",
+                "Set AFK mode to False By [NINJADEEP🇮🇳]",
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
@@ -90,16 +89,16 @@ async def _(event):
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
             await event.edit(
-                f"`Your status has been set to AFK.`\n**Reason** - __{reason}__"
+                f"`Your status has been set to AFK With [NINJADEEP🇮🇳].`\n**Reason** - __{reason}__"
             )
         else:
-            await event.edit(f"`Your status has been set to AFK.`")
+            await event.edit(f"`Your status has been set to AFK With [NINJADEEP🇮🇳].`")
         await asyncio.sleep(5)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"#AFK\nSet AFK mode to True, with Reason - {reason}",
+                f"#AFK\nSet AFK mode to True, with Reason - {reason} By [NinjaDeep👑]",
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
