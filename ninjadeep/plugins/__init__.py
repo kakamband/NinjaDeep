@@ -23,7 +23,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from ninjadeep import ALIVE_NAME, telever
+from ninjadeep import ALIVE_NAME, ninja_version
 from ninjadeep.__init__ import StartTime
 from ninjadeep.ninjadeepConfig import Config, Var
 from ninjadeep.utils import admin_cmd, sudo_cmd
