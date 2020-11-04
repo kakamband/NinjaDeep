@@ -56,7 +56,7 @@ else:
 
 TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@NinjaDeepSUPPORT"
 
-tele = f"NinjaDeep Version: {telever}\n"
+tele = f"NinjaDeep Version: {ninja_version}\n"
 tele += f"Log Group: {log}\n"
 tele += f"Assistant Bot: {bots}\n"
 tele += f"Lydia: {lyd}\n"
