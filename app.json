@@ -133,12 +133,6 @@
    "value": "",
    "required": false
   },
-  "SCREEN_SHOT_LAYER_ACCESS_KEY": {
-   "description": "Required for ScreenCapturing of Websites Get API KEY From-: http://scrapestack.com",
-   "value": "",
-   "required": true
-   
-  },
   "PMPERMIT_PIC": {
   "description": "telegra.ph link to theimage you want as pmpermit pic, leave blank for default one!",
   "value": "",
