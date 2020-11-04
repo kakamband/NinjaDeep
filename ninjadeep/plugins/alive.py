@@ -1,4 +1,3 @@
-# For @NinjaDeepSUPPORT
 """Check if your userbot is working."""
 import os
 import time
@@ -65,47 +64,28 @@ async def amireallyalive(alive):
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**Welcome To NinjaDeep **\n\n"
-        tele += "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
-        tele += "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-        tele += f"` 🔸 NinjaDeep Version:` **{telever}**\n"
-        tele += "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
-        tele += f"` 🔸 Sudo :` **{sudo}**\n"
-        tele += f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
-        tele += "` 🔸 Database Status:` **All OK 👌!**\n"
-        tele += f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-        tele += (
-            "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)"
-        )
+pm_caption = "➥ **NINJADEEP IS:** `ONLINE`\n\n"
+pm_caption += "➥ **SYSTEMS STATS**\n"
+pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
+pm_caption += "➥ **Python:** `3.8.3` \n"
+pm_caption += f"➥ **NinjaDeep Uptime** : `{uptime}` \n"
+pm_caption += "➥ **Database Status:**  `Functional`\n"
+pm_caption += "➥ **NinjaDeep Branch** : `Master`\n"
+pm_caption += f"➥ **NinjaDeep Version** : `{telever}`\n"
+pm_caption += f"➥ **My Boss** : [{DEFAULTUSER}](tg://user?id={myid}) \n"
+pm_caption += "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
+pm_caption += "➥ **License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+pm_caption += "➥ **Copyright** : By [Lovedeep-ViRk@Github](GitHub.com/Lovedeep-ViRk)\n"
+pm_caption += "➥ **Check Stats By Doing** `.stat`. \n\n"
+pm_caption += "[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+link_preview=False,
 
-        await alive.get_chat()
-        await alive.delete()
-        """ For .alive command, check if the bot is running.  """
-        await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
-        await alive.delete()
-        return
-    req = requests.get("https://telegra.ph/file/eb47a032360730730a763.jpg")
-    req.raise_for_status()
-    file = BytesIO(req.content)
-    file.seek(0)
-    img = Image.open(file)
-    with BytesIO() as sticker:
-        img.save(sticker, "webp")
-        sticker.name = "sticker.webp"
-        sticker.seek(0)
-        await borg.send_message(
-            alive.chat_id,
-            f"**Welcome To NinjaDeep **\n\n"
-            "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
-            "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-            f"` 🔸 NinjaDeep Version:` **{telever}**\n"
-            "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
-            f"` 🔸 Sudo :` **{sudo}**\n"
-            f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
-            "` 🔸 Database Status:` **All OK 👌!**\n"
-            f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)",
-            link_preview=False,
-        )
+
+@ninjadeep.on(ninjadeep_on_cmd(pattern=r"alive"))
+@ninjadeep.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+async def ninjadeep(alive):
+    await alive.get_chat()
+    """ For .alive command, check if the bot is running.  """
+         )
         await borg.send_file(alive.chat_id, file=sticker)
         await alive.delete()
