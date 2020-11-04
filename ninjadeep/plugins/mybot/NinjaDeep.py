@@ -367,7 +367,7 @@ async def _(givelogs):
     if givelogs.sender_id == bot.uid:
         await tgbot.send_file(
             givelogs.chat_id,
-            "logs-NinjaDeep.txt",
+            "logs.txt",
             reply_to=givelogs.id,
             caption="[Heroku] NinjaDeep Logs",
             buttons=[
@@ -379,4 +379,4 @@ async def _(givelogs):
             [Button.url("Deploy Your NinjaDeep", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep")]
         ])
     await asyncio.sleep(5)
-    return os.remove('logs-NinjaDeep.txt')
+    return os.remove('logs.txt')
