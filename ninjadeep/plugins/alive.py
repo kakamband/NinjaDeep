@@ -82,7 +82,7 @@ async def amireallyalive(alive):
         await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
         await alive.delete()
         return
-    req = requests.get("resources/NinjaDeep.png" alt="Userge")
+    req = requests.get("resources/NinjaDeep.png" alt="NinjaDeep")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
