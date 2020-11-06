@@ -76,9 +76,7 @@ async def amireallyalive(alive):
         tele += f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += "    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
         tele += f"  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
-        tele += (
-            f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
-        )
+        tele += f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
         tele += (
             "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)"
         )
@@ -109,7 +107,10 @@ async def amireallyalive(alive):
             f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
             "` 🔸 Database Status:` **All OK 👌!**\n"
             f"` 🔹 My pro owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)",
+            "`    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+            f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n" 
+            f"` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+            "`    [✨ GitHub Repository ✨](https://github.com/Lovedeep-ViRk/NinjaDeep)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
