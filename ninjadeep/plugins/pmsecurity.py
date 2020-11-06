@@ -126,7 +126,7 @@ async def approve_p_m(event):
     chat = await event.get_chat()
     if event.is_private:
         if chat.id == 1324185738:
-            await event.edit("Sorry, I Can't Disapprove My Master")
+            await event.edit("Sorry, I Can't Disapprove My Creator")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
