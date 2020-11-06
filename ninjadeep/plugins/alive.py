@@ -79,11 +79,7 @@ async def amireallyalive(alive):
         tele += (
             f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
         )
-        tele += (	
-
-            "    [👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)"	
-
-        )
+        tele += "    [👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)"
 
         await alive.get_chat()
         await alive.delete()
