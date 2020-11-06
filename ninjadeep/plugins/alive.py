@@ -81,7 +81,7 @@ async def amireallyalive(alive):
         )
         tele += (	
 
-            "    [👑 GitHub Repository 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)"	
+            "    [👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)"	
 
         )
 
@@ -114,6 +114,7 @@ async def amireallyalive(alive):
             "`    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
             f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
             f"` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)"
+            "`    [👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
