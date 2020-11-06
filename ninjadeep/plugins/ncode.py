@@ -34,7 +34,10 @@ async def coder_print(event):
         reply_to=event.reply_to_msg_id,
     )
     await event.client.send_file(
-        event.chat_id, "NinjaRESULT.png", force_document=True, reply_to=event.reply_to_msg_id
+        event.chat_id,
+        "NinjaRESULT.png",
+        force_document=True,
+        reply_to=event.reply_to_msg_id,
     )
     # await event.client.send_file(event.chat_id, "resuly.png",
     # force_document=False, reply_to=event.reply_to_msg_id)
