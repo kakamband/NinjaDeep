@@ -8,7 +8,7 @@ from io import BytesIO
 import requests
 from PIL import Image
 
-from ninjadeep import telever
+from ninjadeep import ninja_version
 from ninjadeep.__init__ import StartTime
 from ninjadeep.ninjadeepConfig import Config
 from ninjadeep.utils import admin_cmd, sudo_cmd
@@ -68,7 +68,7 @@ async def amireallyalive(alive):
         tele = f"**Welcome To NinjaDeep **\n\n"
         tele += "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
         tele += "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-        tele += f"` 🔸 NinjaDeep Version:` **{telever}**\n"
+        tele += f"` 🔸 NinjaDeep Version:` **{ninja_version}**\n"
         tele += "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
         tele += f"` 🔸 Sudo :` **{sudo}**\n"
         tele += f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
@@ -79,7 +79,7 @@ async def amireallyalive(alive):
         await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
-        await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
+        await borg.send_file(alive.chat_id, ALV_PIC, caption=ninja, link_preview=False)
         await alive.delete()
         return
     req = requests.get("https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg")
@@ -96,7 +96,7 @@ async def amireallyalive(alive):
             f"**Welcome To NinjaDeep **\n\n"
             "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
             "` 🔸 Telethon version:` **1.17**\n` 🔹 Python:` **3.8.3**\n"
-            f"` 🔸 NinjaDeep Version:` **{telever}**\n"
+            f"` 🔸 NinjaDeep Version:` **{ninja_version}**\n"
             "` 🔹 More Info:` **@NinjaDeepSUPPORT**\n"
             f"` 🔸 Sudo :` **{sudo}**\n"
             f"` 🔹 NinjaDeep Uptime:` **{uptime}**\n"
