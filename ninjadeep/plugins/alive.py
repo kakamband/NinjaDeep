@@ -79,10 +79,10 @@ async def amireallyalive(alive):
         await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
-        await borg.send_file(alive.chat_id, ALV_PIC, caption=ninja, link_preview=False)
+        await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg")
+    req = requests.get("https://telegra.ph/file/e35e7326c6765e424006f.jpg")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
