@@ -76,7 +76,9 @@ async def amireallyalive(alive):
         tele += f"` ➥🔹 Owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += "    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
         tele += f"  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
-        tele += f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n"
+        tele += (
+            f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n"
+        )
         tele += "  🔶[👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)"
 
         await alive.get_chat()
