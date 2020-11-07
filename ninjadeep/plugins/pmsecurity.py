@@ -29,7 +29,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
+    else "https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -44,7 +44,7 @@ USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked a
 USER_BOT_NO_WARN = (
     "**PM Security ~ NinjaDeep**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
-    "{}\n\n**You have** `{}/{}` **warnings...**.\n"
+    "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
@@ -125,8 +125,8 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 1324185738:
-            await event.edit("Sorry, I Can't Disapprove My Creator")
+        if chat.id == 719195224:
+            await event.edit("Sorry, I Can't Disapprove My Master")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
