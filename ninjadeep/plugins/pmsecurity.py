@@ -26,7 +26,7 @@ from ninjadeep import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from ninjadeep.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+NINJAPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
