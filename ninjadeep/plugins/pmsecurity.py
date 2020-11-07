@@ -26,10 +26,10 @@ from ninjadeep import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from ninjadeep.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-NINJAPIC = (
+TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
+    else "https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -125,8 +125,8 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 1324185738:
-            await event.edit("Sorry, I Can't Disapprove My Creator")
+        if chat.id == 719195224:
+            await event.edit("Sorry, I Can't Disapprove My Master")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
@@ -258,7 +258,7 @@ async def do_pm_permit_action(chat_id, event):
 
 
 @ninjadeep.on(
-    events.NewMessage(incoming=True, from_users=(1324185738, 1327433254, 1073811055))
+    events.NewMessage(incoming=True, from_users=(719195224, 536157487, 1222113933))
 )
 async def hehehe(event):
     if event.fwd_from:
