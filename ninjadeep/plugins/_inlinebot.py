@@ -31,7 +31,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/eb47a032360730730a763.jpg"
+    else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -48,6 +48,7 @@ USER_BOT_NO_WARN = (
     f"**PM Security ~ NinjaDeep**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message From NinjaDeep.\n\n"
     "{}\n"
+    "{}\n\n**You have** `{}/{}` **warnings...**.\n"
     "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
 )
 
@@ -348,7 +349,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline("{} {}".format("⚡", x, "⚡"), data="us_plugin_{}".format(x))
+        custom.Button.inline("{} {}".format("🔶", x, "🔶"), data="us_plugin_{}".format(x))
         for x in helpable_plugins
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
