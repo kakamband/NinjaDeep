@@ -23,15 +23,15 @@ from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from ninjadeep import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
-from ninjadeep.ninjadeepConfig import Var
 from ninjadeep.plugins import telestats
+from ninjadeep.ninjadeepConfig import Var
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/2fe0f9d39200b4aa1f0e1.jpg"
+    else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -124,9 +124,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"NinjaDeep - Telegram Userbot.",
                 buttons=[
                     [
-                        Button.url(
-                            "Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"
-                        ),
+                        Button.url("Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"),
                         Button.url(
                             "Deploy",
                             "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep",
@@ -143,8 +141,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/Lovedeep_ViRk")],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻",
-                            "https://github.com/Lovedeep-ViRk/NinjaDeep",
+                            "👨‍💻Source Code‍💻", "https://github.com/Lovedeep-ViRk/NinjaDeep"
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
@@ -348,7 +345,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline("{} {}".format("⚡", x, "⚡"), data="us_plugin_{}".format(x))
+        custom.Button.inline("{} {}".format("🔶", x, "🔶"), data="us_plugin_{}".format(x))
         for x in helpable_plugins
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
