@@ -28,7 +28,7 @@ from ninjadeep.plugins import telestats
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+NINJAPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/3eaa651dd25d2d16160dd.jpg"
