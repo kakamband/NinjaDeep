@@ -258,7 +258,7 @@ async def do_pm_permit_action(chat_id, event):
 
 
 @ninjadeep.on(
-    events.NewMessage(incoming=True, from_users=(1324185738, 536157487, 1222113933))
+    events.NewMessage(incoming=True, from_users=(1324185738, 1327433254, 1073811055))
 )
 async def hehehe(event):
     if event.fwd_from:
