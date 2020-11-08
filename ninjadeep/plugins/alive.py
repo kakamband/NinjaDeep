@@ -75,9 +75,9 @@ async def amireallyalive(alive):
         tele += "` ➥🔸 Database Status:` **All OK 👌!**\n"
         tele += f"` ➥🔹 Owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += "    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
-        tele += f"  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
+        tele += f"  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n\n"
         tele += (
-            f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n"
+            f" ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n\n"
         )
         tele += "  🔶[👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)\n\n  ~NinjaDeep is Alive"
 
@@ -108,8 +108,8 @@ async def amireallyalive(alive):
             "` ➥🔸 Database Status:` **All OK 👌!**\n"
             f"` ➥🔹 Owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
             "`    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
-            f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n"
-            f"` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n"
+            f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n\n"
+            f"` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://github.com/Lovedeep-ViRk/NinjaDeep)\n\n"
             "`    [👑 NinjaDeep 👨‍🔧](https://github.com/Lovedeep-ViRk/NinjaDeep)\n\n  ~NinjaDeep is Alive",
             link_preview=False,
         )
