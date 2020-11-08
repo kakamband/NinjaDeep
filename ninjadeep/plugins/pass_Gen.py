@@ -1,4 +1,5 @@
 print("\033[1;32;40m By----->@DamnitZGuri ☆<----- \n")
+#Rewriten For NinjaDeep By @Lovedeep_ViRk
 
 
 import asyncio
@@ -7,7 +8,8 @@ import string
 import random
 
 
-@ninjadeep.on(admin_cmd(pattern=pGen"(.*)", outgoing=True))
+@ninjadeep.on(admin_cmd(outgoing=True, pattern="pGen"))
+@ninjadeep.on(sudo_cmd(outgoing=True, pattern="pGen", allow_sudo=False))
 
 async def _(event):
     if event.fwd_from:
