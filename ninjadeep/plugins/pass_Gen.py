@@ -9,12 +9,12 @@ print("\033[1;32;40m By----->@DamnitZGuri ☆<----- \n")
 
 @ninjadeep.on(admin_cmd(outgoing=True, pattern="pGen"))
 @ninjadeep.on(sudo_cmd(outgoing=True, pattern="pGen", allow_sudo=False))
-async def _(event):
+async def pass_Gen(event):
+    private = False
     if event.fwd_from:
         return
-
-
-await (event, "Processing. . . .")
+    elif event.is_private:
+        await eor(event, "Processing.....!")
 
 
 def Pass_Gen():
@@ -24,25 +24,25 @@ def Pass_Gen():
     s4 = string.punctuation
 
     service_name = input("Enter Your Site or platform which you want to Generate\n")
-    plen = int(input("Enter Your Pass Length\n"))
+    nlengh = int(input("Enter Your Pass Length\n"))
     s = []
     s.extend(list(s1))
     s.extend(list(s2))
     s.extend(list(s3))
     s.extend(list(s4))
 
-    await (event, "Your Pass Is Generating. . . .")
+    await eor(event, "Your Pass Is Generating. . . .")
 
     random.shuffle(s)
-    print("Your Generated Pass Is\n")
-    print("".join(s[0:plen]))
+    await ups.edit("Your Generated Pass Is\n")
+    await ups.edit("".join(s[0:plen]))
 
-    file = open("pass.txt", "a")
+    file = open("NinjaPass.txt", "w+")
     file.write(f"\n{service_name} pass is ---> ")
-    file.write(f"".join(s[0:plen]))
+    file.write(f"".join(s[0:nlengh]))
     file.close()
 
-    print(event, "Password has been saved in the file")
+    print eor(event, "Password has been saved in the file")
 
 
 if __name__ == "__main__":
