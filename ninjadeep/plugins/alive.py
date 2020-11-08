@@ -74,9 +74,9 @@ async def amireallyalive(alive):
         tele += f"` ➥🔹 NinjaDeep Uptime:` **{uptime}**\n"
         tele += "` ➥🔸 Database Status:` **All OK 👌!**\n"
         tele += f"` ➥🔹 Owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-        tele += "`    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
-        tele += f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n\n"
-        tele += "` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://heroku.com/deploy?template=https://github.com/Lovedeep-ViRk/NinjaDeep)"
+        tele += "`  ➥🔹**License** : [GNU General Public License](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+        tele += f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github](GitHub.com/Lovedeep-ViRk)\n\n"
+        tele += "` ➥🔹[Deploy NinjaDeep]`(https://heroku.com/deploy?template=https://github.com/Lovedeep-ViRk/NinjaDeep)"
 
         await alive.get_chat()
         await alive.delete()
@@ -104,9 +104,9 @@ async def amireallyalive(alive):
             f"` ➥🔹 NinjaDeep Uptime:` **{uptime}**\n"
             "` ➥🔸 Database Status:` **All OK 👌!**\n"
             f"` ➥🔹 Owner` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
-            "`    ➥🔹**License** : [GNU General Public License v3.0](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
-            f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github🇮🇳](GitHub.com/Lovedeep-ViRk)\n\n"
-            "` ➥🔹[🇮🇳 Deploy NinjaDeep 🇮🇳](https://heroku.com/deploy?template=https://github.com/Lovedeep-ViRk/NinjaDeep)",
+            "`  ➥🔹**License** : [GNU General Public License](github.com/Lovedeep-ViRk/NinjaDeep/blob/master/LICENSE)\n"
+            f"`  ➥🔸**Copyright** : By [Lovedeep-ViRk@Github](GitHub.com/Lovedeep-ViRk)\n\n"
+            "` ➥🔹[Deploy NinjaDeep]`(https://heroku.com/deploy?template=https://github.com/Lovedeep-ViRk/NinjaDeep)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
