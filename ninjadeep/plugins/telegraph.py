@@ -94,10 +94,10 @@ async def _(event):
             )
     else:
         await okey.edit(
-            "`Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)`",
+            "`Reply to a message to get a permanent telegra.ph link. Created By NinjaDeep🇮🇳`",
         )
 
 
 def resize_image(image):
     im = Image.open(image)
-    im.save(image, "PNG")
+    im.save(image, "png")
