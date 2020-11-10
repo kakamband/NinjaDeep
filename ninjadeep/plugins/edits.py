@@ -128,7 +128,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-# By @xditya. Kangers keep credits xD
+# By @Lovedeep-ViRk. Kangers keep credits xD
 
 
 @ninjadeep.on(admin_cmd(pattern=f"smoon", outgoing=True))
