@@ -59,7 +59,7 @@ class Development(Var):
 	If you spammed and got reported again and again, 
 	and, at last got your account banned, and you
 	point your fingers at me, I'll be rolling on the floor laughing at you.
-Dont Complaint to Lovedeep(CREATOR)  if Ur Account Banned Bcz i give u Disclaimer First......!
+Dont Complaint to Lovedeep(CREATOR)  if Ur Account Banned Bcz i give u Disclaimer First.......!
 /**
 ```
 
