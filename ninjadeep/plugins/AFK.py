@@ -155,7 +155,7 @@ async def on_afk(event):
         message_to_reply = (
             f"**[AFK]** `Hey, I'm not available.`\n\n**Reason - ** __{reason}__\n\n**Last seen** - __{afk_since}__"
             if reason
-            else f"**[AFK]** `I am unavailable. Please leave your message, NinjaDeep Dilvered Message To me And I will look into it soon!`\n\n**Last seen** - __{afk_since}__ "
+            else f"**[AFK]** `I am unavailable. Please leave your message, NinjaDeep Dilvered Message⚠️ To me And I will look into it soon!`\n\n**Last seen** - __{afk_since}__ "
         )
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
