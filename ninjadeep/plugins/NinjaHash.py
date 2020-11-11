@@ -14,22 +14,22 @@ from ninjadeep import CMD_HELP
 from ninjadeep.events import errors_handler, register
 
 
-@register(outgoing=True, pattern="^.hash (.*)")
+@register(outgoing=True, pattern="^.Ninjahash (.*)")
 @errors_handler
 async def gethash(hash_q):
     """ For .hash command, find the md5, sha1, sha256, sha512 of the string. """
     hashtxt_ = hash_q.pattern_match.group(1)
-    hashtxt = open("hashdis.txt", "w+")
+    hashtxt = open("NinjaHash.txt", "w+")
     hashtxt.write(hashtxt_)
     hashtxt.close()
-    md5 = runapp(["md5sum", "hashdis.txt"], stdout=PIPE)
+    md5 = runapp(["md5sum", "NinjaHash.txt"], stdout=PIPE)
     md5 = md5.stdout.decode()
-    sha1 = runapp(["sha1sum", "hashdis.txt"], stdout=PIPE)
+    sha1 = runapp(["sha1sum", "NinjaHash.txt"], stdout=PIPE)
     sha1 = sha1.stdout.decode()
-    sha256 = runapp(["sha256sum", "hashdis.txt"], stdout=PIPE)
+    sha256 = runapp(["sha256sum", "NinjaHash.txt"], stdout=PIPE)
     sha256 = sha256.stdout.decode()
-    sha512 = runapp(["sha512sum", "hashdis.txt"], stdout=PIPE)
-    runapp(["rm", "hashdis.txt"], stdout=PIPE)
+    sha512 = runapp(["sha512sum", "NinjaHash.txt"], stdout=PIPE)
+    runapp(["rm", "NinjaHash.txt"], stdout=PIPE)
     sha512 = sha512.stdout.decode()
     ans = (
         "Text: `"
