@@ -33,5 +33,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: Lovedeep-ViRk
-          commit_user_email: Lovedeep1deep@gmail.com
-          commit_author: Lovedeep-ViRk <Lovedeep1deep@gmail.com>
+          commit_user_email: 73482922+Lovedeep-ViRk@users.noreply.github.com
+          commit_author: Lovedeep-ViRk <73482922+Lovedeep-ViRk@users.noreply.github.com>
