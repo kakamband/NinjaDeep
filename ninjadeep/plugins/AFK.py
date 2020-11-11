@@ -16,7 +16,7 @@
 
 """
 AFK Plugin for NinjaDeep
-Syntax: .afk REASON
+Syntax: .NAfk REASON
 """
 
 import asyncio
