@@ -34,22 +34,22 @@ class Var(object):
     SUDO_USERS = set(
         int(x) for x in os.environ.get(
             "SUDO_USERS",
-            "1097131648").split())
+            "1324185738").split())
     WHITELIST_USERS = set(
         int(x) for x in os.environ.get(
             "WHITELIST_USERS",
-            "832241419").split())
+            "1324185738").split())
     BLACKLIST_USERS = set(
         int(x) for x in os.environ.get(
             "BLACKLIST_USERS", "").split())
     DEVLOPERS = set(
         int(x) for x in os.environ.get(
             "DEVLOPERS",
-            "953414679").split())
+            "1324185738").split())
     OWNER_ID = set(
         int(x) for x in os.environ.get(
             "OWNER_ID",
-            "719195224").split())
+            "1324185738").split())
     SUPPORT_USERS = set(
         int(x) for x in os.environ.get(
             "SUPPORT_USERS", "").split())
@@ -70,7 +70,7 @@ class Var(object):
     # for autopic
     AUTOPIC_TEXT = os.environ.get(
         "AUTOPIC_TEXT",
-        "Life Is too Short.\n And so is your TG account.")
+        "Life Is too Short.\n And so is your NinjaDeep account.")
     AUTO_PIC_FONT = os.environ.get("AUTOPIC_FONT", "DejaVuSans.ttf")
     AUTOPIC_FONT_COLOUR = os.environ.get("AUTOPIC_FONT_COLOUR", None)
     if AUTH_TOKEN_DATA is not None:
