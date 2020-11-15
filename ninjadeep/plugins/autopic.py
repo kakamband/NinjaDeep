@@ -32,7 +32,7 @@ FONT_FILE_TO_USE = f"fonts/{fntz}"
 AUTOPIC_TEXT = (
     str(AUTOPIC_TEXT)
     if AUTOPIC_TEXT
-    else "Life Is too Short.\n And so is your TG account."
+    else "Life Is too Short.\n And so is your NinjaDeep account."
 )
 COLOUR = str(AUTOPIC_FONT_COLOUR) if AUTOPIC_FONT_COLOUR else (255, 255, 255)
 
