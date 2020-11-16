@@ -22,7 +22,7 @@ else:
     bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 StartTime = time.time()
-ninja_version = "2.0.1"
+ninja_version = "3.4"
 
 CMD_LIST = {}
 CMD_HELP = {}
