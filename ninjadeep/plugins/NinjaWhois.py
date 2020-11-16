@@ -144,5 +144,7 @@ async def fetch_info(replied_user, event):
 
 
 CMD_HELP.update(
-    {"NinjaWhois": ".NinjaWhois <reply/username/userid>\nUse - Get detailed info on that user."}
+    {
+        "NinjaWhois": ".NinjaWhois <reply/username/userid>\nUse - Get detailed info on that user."
+    }
 )
