@@ -1,4 +1,4 @@
-#    NinjaDeep - UserBot
+#    ninjadeep - UserBot
 #    Copyright (C) 2020 ninjadeep
 
 #    This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import ninjadeep.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from ninjadeep import ALIVE_NAME, CUSTOM_PMPERMIT, bot
+from ninjadeep import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
 from ninjadeep.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -85,10 +85,13 @@ async def you_dm_niqq(event):
         if not pmpermit_sql.is_approved(chat.id):
             if chat.id not in PM_WARNS:
                 pmpermit_sql.approve(chat.id, "outgoing")
-                bruh = "__Auto-approved coz outgoing 🚶‍♂️__"
-                rko = await borg.send_message(event.chat_id, bruh)
-                await asyncio.sleep(3)
-                await rko.delete()
+                logit = "#Auto_Approved\nUser - [{}](tg://user?id={})".format(
+                    chat.first_name, chat.id
+                )
+                try:
+                    await borg.send_message(Var.PRIVATE_GROUP_ID, logit)
+                except BaseException:
+                    pass
 
 
 @ninjadeep.on(admin_cmd(pattern="block ?(.*)"))
@@ -126,7 +129,7 @@ async def approve_p_m(event):
     chat = await event.get_chat()
     if event.is_private:
         if chat.id == 1324185738:
-            await event.edit("Sorry, I Can't Disapprove My Creator👑")
+            await event.edit("Sorry, I Can't Disapprove My Master")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
@@ -258,7 +261,7 @@ async def do_pm_permit_action(chat_id, event):
 
 
 @ninjadeep.on(
-    events.NewMessage(incoming=True, from_users=(1324185738, 1073811055, 13274332543))
+    events.NewMessage(incoming=True, from_users=(1324185738))
 )
 async def hehehe(event):
     if event.fwd_from:
@@ -267,7 +270,7 @@ async def hehehe(event):
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**Dev is here**")
-            await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
+            await borg.send_message(chat, "**Here comes my Creator! Lucky you!!**")
 
 
 # instant block
@@ -292,4 +295,13 @@ if NEEDIT == "on":
             await borg(functions.contacts.BlockRequest(chat_id))
 
 
-# (c) ninjadeep
+CMD_HELP.update(
+    {
+        "pmsecurity": ".approve/.a\nUse - Approve PM\
+        \n\n.disapprove/.da\nUse - DisApprove PM\
+        \n\n.listapproved\nUse - Get all approved PMs.\
+        \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
+        \nGet help from @NinjaDeepOT."
+    }
+)
+# (c) NinjaDeep
