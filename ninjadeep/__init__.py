@@ -115,7 +115,7 @@ if bool(ENV):
     # for autopic
     AUTOPIC_TEXT = os.environ.get(
         "AUTOPIC_TEXT",
-        "Life Is too Short.\n And so is your TG account.")
+        "Life Is too Short.\n And so is your NinjaDeep account.")
     AUTO_PIC_FONT = os.environ.get("AUTOPIC_FONT", "DejaVuSans.ttf")
     AUTOPIC_FONT_COLOUR = os.environ.get("AUTOPIC_FONT_COLOUR", None)
 
