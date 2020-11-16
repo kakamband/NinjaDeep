@@ -1,7 +1,7 @@
 """@telegraph Utilities
 Available Commands:
-.telegraph media as reply to a media
-.telegraph text as reply to a large text"""
+.ninjagraph media as reply to a media
+.ninjagraph text as reply to a large text"""
 
 import os
 from datetime import datetime
@@ -16,8 +16,8 @@ r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
 
-@ninjadeep.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
-@ninjadeep.on(sudo_cmd(pattern="telegraph (media|text) ?(.*)", allow_sudo=True))
+@ninjadeep.on(admin_cmd(pattern="ninjagraph (media|text) ?(.*)"))
+@ninjadeep.on(sudo_cmd(pattern="ninjagraph (media|text) ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def _(event):
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await okey.edit(
-                    "Uploaded to this [Telegraph Page](https://telegra.ph{}) in {} seconds.".format(
+                    "Uploaded to this [NinjaGraph Page](https://telegra.ph{}) in {} seconds.".format(
                         media_urls[0], (ms + ms_two)
                     ),
                     link_preview=False,
@@ -86,18 +86,18 @@ async def _(event):
             response = telegraph.create_page(title_of_page, html_content=page_content)
             end = datetime.now()
             ms = (end - start).seconds
-            cat = f"https://telegra.ph/{response['path']}"
+            link = f"https://telegra.ph/{response['path']}"
             await okey.edit(
-                f"**link : ** [telegraph]({cat})\
+                f"**link : ** [telegraph]({link})\
                  \n**Time Taken : **`{ms} seconds.`",
                 link_preview=True,
             )
     else:
         await okey.edit(
-            "`Reply to a message to get a permanent telegra.ph link. Created By NinjaDeep🇮🇳`",
+            "`Reply to a message to get a permanent telegra.ph link. (@NinjaDeepSUPPORT)`",
         )
 
 
 def resize_image(image):
     im = Image.open(image)
-    im.save(image, "png")
+    im.save(image, "PNG")
