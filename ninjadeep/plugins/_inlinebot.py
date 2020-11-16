@@ -1,5 +1,5 @@
-#    ninjadeep - UserBot
-#    Copyright (C) 2020 ninjadeep
+#    NinjaDeep - UserBot
+#    Copyright (C) 2020 NinjaDeep
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -14,6 +14,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import asyncio
 import html
 import os
 import re
@@ -22,11 +23,10 @@ from math import ceil
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from ninjadeep import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
-from ninjadeep.ninjadeepConfig import Var
+from ninjadeep import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
 from ninjadeep.plugins import telestats
+from ninjadeep.ninjadeepConfig import Var
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
@@ -43,7 +43,7 @@ MESAG = (
     else "`NinjaDeep PM security! Please wait for me to approve you. 😊"
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "NinjaDeep User"
-USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice By NinjaDeep.`\n\n**GoodBye!** "
+USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
     f"**PM Security ~ NinjaDeep**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
@@ -51,37 +51,23 @@ USER_BOT_NO_WARN = (
     "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
 )
 
+CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "🔶")
+HELP_ROWS = int(os.environ.get("HELP_ROWS", 5))
+HELP_COLOUMNS = int(os.environ.get("HELP_COLOUMNS", 3))
+
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    yourbot = Var.TG_BOT_USER_NAME_BF_HER
 
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("NinjaDeep"):
-            thelink = f"https://t.me/{yourbot}?start=logs"
-            result = builder.article(
-                title="Help-Menu",
-                text=f"This is the help menu for {DEFAULTUSER}\n\nProvided by [NinjaDeep](https://github.com/Lovedeep-ViRk/NinjaDeep)",
-                buttons=[
-                    [custom.Button.inline("All commands", data="helpmenu")],
-                    [
-                        Button.url("Logs", f"https://t.me/{yourbot}?start=logs"),
-                        custom.Button.inline("Close", data="close"),
-                        custom.Button.inline("Stats", data="statcheck"),
-                    ],
-                    [Button.url("Support", "t.me/NinjaDeepSUPPORT")],
-                ],
-                link_preview=False,
-            )
-        elif event.query.user_id == bot.uid and query == "clicked":
+        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
-            x = len(CMD_LIST)
             result = builder.article(
                 "© NinjaDeep Help",
-                text=f"`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[NinjaDeep](https://github.com/Lovedeep-ViRk/NinjaDeep/)**\n\nCurrently Loaded Plugins: {x}",
+                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -96,8 +82,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         Button.url(
                             "Deploy Now!",
                             "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep",
-                        ),
-                        custom.Button.inline("Close", data="close"),
+                        )
                     ],
                 ],
             )
@@ -108,8 +93,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=TELEBT,
                 buttons=[
                     [
-                        custom.Button.inline("To Request Something 😁", data="req"),
-                        custom.Button.inline("To Get Help 🆘", data="plshelpme"),
+                        custom.Button.inline("Request Something 😁", data="req"),
+                        custom.Button.inline("Get Help 🆘", data="plshelpme"),
                     ],
                     [
                         custom.Button.inline("Random Chat 💭", data="chat"),
@@ -124,9 +109,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"NinjaDeep - Telegram Userbot.",
                 buttons=[
                     [
-                        Button.url(
-                            "Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"
-                        ),
+                        Button.url("Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"),
                         Button.url(
                             "Deploy",
                             "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep",
@@ -143,8 +126,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/Lovedeep_ViRk")],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻",
-                            "https://github.com/Lovedeep-ViRk/NinjaDeep",
+                            "👨‍💻Source Code‍💻", "https://github.com/Lovedeep-ViRk/ninjadeep"
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
@@ -153,7 +135,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     ],
                     [
                         custom.Button.url(
-                            "Updates and Support Group↗️", "https://t.me/NinjaDeepOT"
+                            "Updates and Support Group🏘", "https://t.me/NinjaDeepSUPPORT"
                         )
                     ],
                 ],
@@ -174,23 +156,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Please get your own Userbot from @NinjaDeepOT , and don't use mine!"
-            )
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"helpmenu")))
-    async def telemenu(event):
-        if event.query.user_id == bot.uid:
-            await event.edit(
-                "**Help menu opened!**\n__Check saved messages, if you don't find a menu here...__"
-            )
-            mybot = Var.TG_BOT_USER_NAME_BF_HER
-            q = "clicked"
-            helpermenu = await bot.inline_query(mybot, q)
-            await helpermenu[0].click(event.chat_id)
-        else:
-            reply_pop_up_alert = (
-                "Please get your own Userbot from @NinjaDeepOT , and don't use mine!"
+                "Please get your own NinjaDeep from @NinjaDeepSUPPORT , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -201,7 +167,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [NinjaDeep](t.me/NinjaDeepSUPPORT)"
+                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [NinjaDeep](t.me/NinjaDeepSupport)"
             )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
@@ -246,7 +212,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oh!\n{DEFAULTUSER} would be glad to help you out...\nPlease leave your message here **in a single line** and wait till I respond 😊"
+                f"Oh!\n{DEFAULTUSER} would be glad to help you out...\nPlease leave your message here **in a single line** and wait till [{first_name}](tg://user?id={ok}) respond 😊"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
             first_name = html.escape(target.user.first_name)
@@ -263,7 +229,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored."
+                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored By [{first_name}](tg://user?id={ok}) ."
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
@@ -280,9 +246,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await event.edit("Menu Closed!")
+            await event.edit("Menu Closed!!")
         else:
-            reply_pop_up_alert = "Please get your own userbot from @NinjaDeepOT "
+            reply_pop_up_alert = "Please get your own NinjaDeep from @NinjaDeepSupport "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
@@ -304,7 +270,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Please get your own NinjaDeep, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -316,39 +282,56 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             plugin_name = event.data_match.group(1).decode("UTF-8")
             help_string = ""
+            help_string += f"Commands Available in {plugin_name} - \n"
             try:
-                for i in CMD_LIST[plugin_name]:
-                    help_string += i
+                if plugin_name in CMD_HELP:
+                    for i in CMD_HELP[plugin_name]:
+                        help_string += i
                     help_string += "\n"
+                else:
+                    for i in CMD_LIST[plugin_name]:
+                        help_string += i
+                        help_string += "\n"
             except BaseException:
                 pass
             if help_string == "":
-                reply_pop_up_alert = "{} is useless".format(plugin_name)
+                reply_pop_up_alert = "{} has no detailed info.\nUse .help {}".format(
+                    plugin_name, plugin_name
+                )
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                © NinjaDeep 🇮🇳".format(
+                © NinjaDeep🇮🇳".format(
                 plugin_name
             )
-            try:
+            if len(help_string) >= 140:
+                oops = "List too long!\nCheck your saved messages!"
+                await event.answer(oops, cache_time=0, alert=True)
+                help_string += "\n\nThis will be auto-deleted in 1 minute!"
+                if bot is not None and event.query.user_id == bot.uid:
+                    ok = await bot.send_message("me", help_string)
+                    await asyncio.sleep(60)
+                    await ok.delete()
+            else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            except BaseException:
-                halps = "Do .help {} to get the list of commands.".format(plugin_name)
-                await event.answer(halps, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Please get your own NinjaDeep, and don't use mine!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 5
-    number_of_cols = 2
+    number_of_rows = HELP_ROWS
+    number_of_cols = HELP_COLOUMNS
+    tele = CUSTOM_HELP_EMOJI
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline("{} {}".format("🔶", x, "🔶"), data="us_plugin_{}".format(x))
+        custom.Button.inline(
+            "{} {} {}".format(tele, x, tele), data="us_plugin_{}".format(x)
+        )
         for x in helpable_plugins
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
