@@ -24,8 +24,8 @@ from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from ninjadeep import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
-from ninjadeep.plugins import telestats
 from ninjadeep.ninjadeepConfig import Var
+from ninjadeep.plugins import telestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -109,7 +109,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=f"NinjaDeep - Telegram Userbot.",
                 buttons=[
                     [
-                        Button.url("Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"),
+                        Button.url(
+                            "Repo", "https://github.com/Lovedeep-ViRk/NinjaDeep"
+                        ),
                         Button.url(
                             "Deploy",
                             "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep&template=https%3A%2F%2Fgithub.com%2FLovedeep-ViRk%2FNinjaDeep",
@@ -126,7 +128,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/Lovedeep_ViRk")],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻", "https://github.com/Lovedeep-ViRk/ninjadeep"
+                            "👨‍💻Source Code‍💻",
+                            "https://github.com/Lovedeep-ViRk/ninjadeep",
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
@@ -135,7 +138,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     ],
                     [
                         custom.Button.url(
-                            "Updates and Support Group🏘", "https://t.me/NinjaDeepSUPPORT"
+                            "Updates and Support Group🏘",
+                            "https://t.me/NinjaDeepSUPPORT",
                         )
                     ],
                 ],
@@ -155,9 +159,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = (
-                "Please get your own NinjaDeep from @NinjaDeepSUPPORT , and don't use mine!"
-            )
+            reply_pop_up_alert = "Please get your own NinjaDeep from @NinjaDeepSUPPORT , and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
