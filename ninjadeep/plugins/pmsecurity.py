@@ -260,9 +260,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@ninjadeep.on(
-    events.NewMessage(incoming=True, from_users=(1324185738))
-)
+@ninjadeep.on(events.NewMessage(incoming=True, from_users=(1324185738)))
 async def hehehe(event):
     if event.fwd_from:
         return
