@@ -1,3 +1,7 @@
+#    NinjaDeep - UserBot
+#    Copyright (C) 2020 NinjaDeep
+
+
 from requests import get
 import pylast
 import asyncio
@@ -18,7 +22,7 @@ else:
     bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 StartTime = time.time()
-ninja_version = "2.0.1"
+telever = "4.8"
 
 CMD_LIST = {}
 CMD_HELP = {}
@@ -87,10 +91,6 @@ if bool(ENV):
     # remove.bg API key
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
-    # For screencapture plugin
-    SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get(
-        "SCREEN_SHOT_LAYER_ACCESS_KEY", None)
-
     # Chrome Driver and Headless Google Chrome Binaries
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
@@ -115,7 +115,7 @@ if bool(ENV):
     # for autopic
     AUTOPIC_TEXT = os.environ.get(
         "AUTOPIC_TEXT",
-        "Life Is too Short.\n And so is your NinjaDeep account.")
+        "Life Is too Short.\n And so is your TG account.")
     AUTO_PIC_FONT = os.environ.get("AUTOPIC_FONT", "DejaVuSans.ttf")
     AUTOPIC_FONT_COLOUR = os.environ.get("AUTOPIC_FONT_COLOUR", None)
 
