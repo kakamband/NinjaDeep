@@ -66,7 +66,7 @@ async def amireallyalive(alive):
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
         tele = f"**Welcome To NinjaDeep **\n\n"
-        tele += "`➥🔹Hey! I'm alive. All systems online and functioning normally!`\n\n"
+        tele += "`➥🔹NinjaDeep **Alive** ||All systems online and functioning normally!`\n\n"
         tele += "` ➥🔸 Telethon version:` **1.17**\n` ➥🔹 Python:` **3.8.3**\n"
         tele += f"` ➥🔸 NinjaDeep Version:` **{ninja_version}**\n"
         tele += "` ➥🔹 More Info:` **@NinjaDeepSUPPORT**\n"
@@ -97,7 +97,7 @@ async def amireallyalive(alive):
         await borg.send_message(
             alive.chat_id,
             f"**Welcome To NinjaDeep **\n\n"
-            "`➥🔹Hey! I'm alive. All systems online and functioning normally!`\n\n"
+            "`➥🔹NinjaDeep **Alive** ||All systems online and functioning normally!`\n\n"
             "` ➥🔸 Telethon version:` **1.17**\n` ➥🔹 Python:` **3.8.3**\n"
             f"` ➥🔸 NinjaDeep Version:` **{ninja_version}**\n"
             "` ➥🔹 More Info:` **@NinjaDeepSUPPORT**\n"
