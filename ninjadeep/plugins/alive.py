@@ -66,7 +66,9 @@ async def amireallyalive(alive):
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
         tele = f"**Welcome To NinjaDeep **\n\n"
-        tele += "`➥🔹NinjaDeep **Alive** ||All systems online and functioning normally!`\n\n"
+        tele += (
+            "`➥🔹NinjaDeep **Alive** ||All systems online and functioning normally!`\n\n"
+        )
         tele += "` ➥🔸 Telethon version:` **1.17**\n` ➥🔹 Python:` **3.8.3**\n"
         tele += f"` ➥🔸 NinjaDeep Version:` **{ninja_version}**\n"
         tele += "` ➥🔹 More Info:` **@NinjaDeepSUPPORT**\n"
