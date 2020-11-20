@@ -1,7 +1,7 @@
 """
 UserBot Module to search the internet
-All-in-one by @its_xditya
-(c)ninjadeep
+All-in-one by @Lovedeep_ViRk
+(c)NinjaDeep
 
 Available commands:
 .ggl - howtogoogle
@@ -20,7 +20,7 @@ from ninjadeep.utils import admin_cmd
 @ninjadeep.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
 @ninjadeep.on(sudo_cmd(allow_sudo=True, pattern=r"gs (.*)"))
 async def gsearch(q_event):
-    """ For .google command, do a Google search from @ninjadeepHelp. """
+    """ For .google command, do a Google search from @NinjaDeepHelp. """
     match = q_event.pattern_match.group(1)
     page = findall(r"page=\d+", match)
     try:
@@ -59,10 +59,10 @@ async def _(event):
         link = sample_url.rstrip()
         await eor(
             event,
-            "Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(input_str, link),
+            "Let me 🦆 DuckDuckGo that for you By NinjaDeep:\n🔎 [{}]({})".format(input_str, link),
         )
     else:
-        await eor(event, "something is wrong. please try again later.")
+        await eor(event, "something went wrong. please try again later.")
 
 
 @ninjadeep.on(admin_cmd(pattern="ggl (.*)"))
@@ -81,4 +81,4 @@ async def _(event):
             "[{}]({})\n`Thank me Later 🙃` ".format(input_str, response_api.rstrip()),
         )
     else:
-        await eor(event, "something is wrong. please try again later.")
+        await eor(event, "something went wrong. please try again later.")
