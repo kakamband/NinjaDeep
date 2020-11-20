@@ -15,7 +15,7 @@ import asyncio
 
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#    By @buddhhu
+#    By @Lovedeep_ViRk
 #
 import os
 import shutil
@@ -39,11 +39,11 @@ COLOUR = str(AUTOPIC_FONT_COLOUR) if AUTOPIC_FONT_COLOUR else (255, 255, 255)
 
 @ninjadeep.on(admin_cmd(pattern="autopic"))
 async def autopic(event):
-    await event.edit("**Autopic has been enabled!!!**")
+    await event.edit("**Autopic has been enabled •Succesfully• By NinjaDeep!!!**")
     a = await event.get_reply_message()
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "ninjadeep/original_pic.png"
     await ninjadeep.download_media(a, downloaded_file_name)
-    photo = "userbot/photo_pfp.png"
+    photo = "ninjadeep/photo_pfp.png"
     while True:
         shutil.copy(downloaded_file_name, photo)
         current_time = datetime.now().strftime(
