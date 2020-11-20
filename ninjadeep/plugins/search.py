@@ -59,7 +59,9 @@ async def _(event):
         link = sample_url.rstrip()
         await eor(
             event,
-            "Let me 🦆 DuckDuckGo that for you By NinjaDeep:\n🔎 [{}]({})".format(input_str, link),
+            "Let me 🦆 DuckDuckGo that for you By NinjaDeep:\n🔎 [{}]({})".format(
+                input_str, link
+            ),
         )
     else:
         await eor(event, "something went wrong. please try again later.")
