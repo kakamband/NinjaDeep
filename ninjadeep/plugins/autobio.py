@@ -1,6 +1,6 @@
 # AutoBio plugin for ninjadeep
 # Using this might lead to ban of your account, use at your own risk.
-# Re-Written by @its_xditya
+# Re-Written by @Lovedeep_ViRk
 
 import asyncio
 import time
@@ -20,7 +20,7 @@ async def _(event):
     while True:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        bio = f" i am (tg://user?id={myid})📅 {DMY} | This is my bio, i Guess | ⌚️ {HMS}"
+        bio = f" 📅 {DMY} | This is my bio, i Guess | ⌚️ {HMS}"
         logger.info(bio)
         try:
             await borg(
