@@ -26,10 +26,32 @@ from datetime import datetime
 
 # /start
 started = f"**Welcome To NinjaDeep**\nHi, this is the NinjaDeep Assistant bot of {ALIVE_NAME}.\nSend /help to see what you can do here!\n\n(c) @NinjaDeepSUPPORT"
-),
-                    ],
-                    Button.url("Creator👑", "https://t.me/Lovedeep_ViRk"),
-    [Button.url("SUPPORT", "https://t.me/NinjaDeepSUPPORT")],
+buttons=[
+                [custom.Button.inline("Show Users 👨‍👦‍👦", data="users")],
+                [custom.Button.inline("Commands For Assistant", data="gibcmd")],
+                [
+                    Button.url(
+                        "Add Me to Group 🏘", f"t.me/{bot_username}?startgroup=true"
+                    )
+                ],
+            ],
+        )
+    else:
+        if already_added(event.sender_id):
+            pass
+        elif not already_added(event.sender_id):
+            add_usersid_in_db(event.sender_id)
+        await tgbot.send_message(
+            event.chat_id,
+            message=starttext,
+            link_preview=False,
+            buttons=[
+                [custom.Button.inline("Deploy your NinjaDeep 🇮🇳", data="deploy")],
+                [Button.url("Help Me ❓", "t.me/NinjaDeepOT")],
+                [Button.url("CREATOR👑", "t.me/Lovedeep_ViRk")],
+            ],
+        )
+
 
 # /help
 helpmefast="Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepOT/14)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own ninjadeep via @ninjadeepSupport to get such amazing features and more!__"
