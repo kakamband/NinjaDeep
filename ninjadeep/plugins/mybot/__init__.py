@@ -51,9 +51,6 @@ buttons = [
                     "Deploy your NinjaDeep 🇮🇳", data="deploy")],
                 [Button.url("Help Me ❓", "t.me/NinjaDeepOT")],
                 [Button.url("CREATOR👑", "t.me/Lovedeep_ViRk")],
-            ],
-        )
-
 
 # /help
 helpmefast="Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepSUPPORT/2152)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own NinjaDeep via @NinjaDeepSUPPORT to get such amazing features and more!__"
