@@ -30,7 +30,7 @@
    "value": ""
   },
   "STRING_SESSION": {
-   "description": "Get this value by running python3 telesetup.py locally or https://ninjadeep-sessionstring-generator.lovedeep.repl.run online.",
+   "description": "Get this value by running python3 telesetup.py locally or https://NinjaDeep-SessionString-Generator.lovedeep.repl.run online.",
    "value": ""
   },  
   "CUSTOM_PMPERMIT": {
