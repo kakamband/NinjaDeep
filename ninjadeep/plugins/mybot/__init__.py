@@ -31,30 +31,30 @@ started = f"**Welcome To NinjaDeep**\nHi, this is the NinjaDeep Assistant bot of
                     [Button.url("Creator👑", "https://t.me/Lovedeep_ViRk")],
 
 # /help
-helpmefast = "Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepOT/14)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own ninjadeep via @ninjadeepSupport to get such amazing features and more!__"
+helpmefast="Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepOT/14)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own ninjadeep via @ninjadeepSupport to get such amazing features and more!__"
 
 # /ping
 
 
 def get_readable_time(seconds: int) -> str:
-    count = 0
-    ping_time = ""
-    time_list = []
-    time_suffix_list = ["s", "m", "h", "days"]
+    count=0
+    ping_time=""
+    time_list=[]
+    time_suffix_list=["s", "m", "h", "days"]
 
     while count < 4:
         count += 1
         if count < 3:
-            remainder, result = divmod(seconds, 60)
+            remainder, result=divmod(seconds, 60)
         else:
-            remainder, result = divmod(seconds, 24)
+            remainder, result=divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
-        seconds = int(remainder)
+        seconds=int(remainder)
 
     for x in range(len(time_list)):
-        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+        time_list[x]=str(time_list[x]) + time_suffix_list[x]
     if len(time_list) == 4:
         ping_time += time_list.pop() + ", "
     time_list.reverse()
@@ -62,7 +62,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-start = datetime.now()
-end = datetime.now()
-ms = (end - start).microseconds / 1000
-forping = f"🏓Ping speed: {ms}"
+start=datetime.now()
+end=datetime.now()
+ms=(end - start).microseconds / 1000
+forping=f"🏓Ping speed: {ms}"
