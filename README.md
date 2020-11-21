@@ -1,5 +1,7 @@
 # NinjaDeep - Telegram UserBot
 
+[![NinjaDeep](https://media.giphy.com/media/EiIq9pXJKzb4aVNuWV/giphy.gif)](https://t.me/NinjaDeepOT)
+
 # <p align="left"><a href="https://github.com/Lovedeep-ViRk/NinjaDeep"><img src="https://github-readme-stats.vercel.app/api/pin?username=Lovedeep-ViRk&show_icons=true&theme=dark&hide_border=true&repo=NinjaDeep"></a></p><p align="centre"><a href="https://t.me/NinjaDeepOT"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a><a href="https://github.com/Lovedeep-ViRk/NinjaDeep/stargazers"><img src="https://img.shields.io/github/stars/Lovedeep-ViRk/NinjaDeep?style=social"></a><a href="https://github.com/Lovedeep-ViRk/NinjaDeep/fork"><img src="https://img.shields.io/github/forks/Lovedeep-ViRk/NinjaDeep?label=Fork&logoColor=blue&style=social"></a><a href="https://github.com/Lovedeep-ViRk/NinjaDeep"><img src="https://img.shields.io/github/last-commit/Lovedeep-ViRk/NinjaDeep?style=flat-square"></a></p>
    
 ## The Easier Way to install
