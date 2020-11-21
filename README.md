@@ -13,7 +13,7 @@ Join [Support group](https://t.me/NinjaDeepOT) for updates and new plugin sugges
 Do fork and star the repo 
 
 ### Session String 
-<a href="https://ninjadeep-sessionstring-generator.lovedeep.repl.run/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
+<a href="https://repl.it/@lovedeep/NinjaDeep-SessionString-Generator/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
 ### The Normal Way
 
