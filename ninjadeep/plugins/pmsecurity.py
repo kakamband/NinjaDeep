@@ -103,7 +103,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
+        if chat.id == 1470165323:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
         else:
@@ -128,8 +128,8 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 1324185738:
-            await event.edit("Sorry, I Can't Disapprove My Master")
+        if chat.id == 1470165323:
+            await event.edit("Sorry, I Can't Disapprove My CreaTor👑")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
@@ -260,7 +260,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@ninjadeep.on(events.NewMessage(incoming=True, from_users=(1324185738)))
+@ninjadeep.on(events.NewMessage(incoming=True, 1470165323)))
 async def hehehe(event):
     if event.fwd_from:
         return
