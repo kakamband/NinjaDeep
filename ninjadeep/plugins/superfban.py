@@ -7,7 +7,7 @@ import asyncio
 
 from ninjadeep.utils import admin_cmd
 
-# By @HeisenbergTheDanger, @its_xditya
+# By @Lovedeep_ViRk
 
 
 @ninjadeep.on(admin_cmd("superfban ?(.*)"))
@@ -58,11 +58,11 @@ async def _(event):
             REASON = " #TBMassBanned "
     try:
         int(FBAN)
-        if int(FBAN) == 630654925 or int(FBAN) == 719195224:
+        if int(FBAN) == 1470165323:
             await event.edit("Something went wrong.")
             return
     except BaseException:
-        if FBAN == "@HeisenbergTheDanger" or FBAN == "@xditya":
+        if FBAN == "@Lovedeep_ViRk":
             await event.edit("Something went wrong.")
             return
     if Config.FBAN_GROUP_ID:
@@ -148,7 +148,7 @@ async def _(event):
     )
 
 
-# By @HeisenbergTheDanger, @its_xditya
+# By @Lovedeep_ViRk
 
 
 @ninjadeep.on(admin_cmd("superunfban ?(.*)"))
@@ -224,7 +224,7 @@ async def _(event):
     await event.edit(f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#TB")
 
 
-# By @HeisenbergTheDanger, @its_xditya
+# By @Lovedeep_ViRk
 
 """
 .superfban <username/userid> <reason>\
