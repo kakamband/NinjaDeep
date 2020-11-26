@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    NinjaDeep - UserBot
+#    Copyright (C) 2020 NinjaDeep
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -20,15 +20,39 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from telebot import ALIVE_NAME
-from telebot.__init__ import StartTime
+from ninjadeep import ALIVE_NAME
+from ninjadeep._init_ import StartTime
 from datetime import datetime
 
 # /start
-started = f"**Welcome To TeleBot**\nHi, this is the assistant bot of {ALIVE_NAME}.\nSend `/help` to see what you can do here!\n\n(c) @TeleBotSupport"
-
+started = f"**Welcome To NinjaDeep**\nHi, this is the assistant bot of {ALIVE_NAME}.\nSend `/help` to see what you can do here!\n\n(c) @NinjaDeepSUPPORT"
+buttons = [	
+                [custom.Button.inline("Show Users 👨‍👦‍👦", data="users")],	
+                [custom.Button.inline(	
+                    "Commands For Assistant", data="gibcmd")],	
+                [	
+                    Button.url(	
+                        "Add Me to Group 🏘", f"t.me/{bot_username}?startgroup=true"	
+                    )	
+                ],	
+            ],	
+        )	
+    else:	
+        if already_added(event.sender_id):	
+            pass	
+        elif not already_added(event.sender_id):	
+            add_usersid_in_db(event.sender_id)	
+        await tgbot.send_message(	
+            event.chat_id,	
+            message = starttext,	
+            link_preview = False,	
+            buttons = [	
+                [custom.Button.inline(	
+                    "Deploy your NinjaDeep 🇮🇳", data="deploy")],	
+                [Button.url("Help Me ❓", "t.me/NinjaDeepOT")],	
+                [Button.url("CREATOR👑", "t.me/Lovedeep_ViRk")],
 # /help
-helpmefast = "Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/TeleBotHelpChat/22678)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own TeleBot via @TeleBotSupport to get such amazing features and more!__"
+helpmefast = "Here are the things that you can do with this bot!\n\n`/info @username` - get information about the user.\n`/ping` - Ping stats\n`/tr <lang_code>` - Use as reply to the text to translate, language codes can be foung [here](https://t.me/NinjaDeepSUPPORT/2152)!\n`/id` - To get user/sender id.\n`/logs` - To view the app logs.\n`/usage` - To get app dyno usage.\n`/help` - This menu.\n\n__Set-up your own NinjaDeep via @NinjaDeepSupport to get such amazing features and more!__"
 
 # /ping
 
