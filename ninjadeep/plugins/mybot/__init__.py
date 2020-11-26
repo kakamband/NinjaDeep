@@ -14,6 +14,12 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import asyncio
+import io
+import os
+import re
+
+from telethon import Button, custom, events
 import html
 import time
 from telethon.tl.functions.photos import GetUserPhotosRequest
