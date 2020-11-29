@@ -41,15 +41,15 @@ async def start(event):
     firstname = replied_user.user.first_name
     vent = event.chat_id
     starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull admin Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own admin You Can Deploy From Button Below. \n\nPowered By [NinjaDeep🇮🇳](t.me/NinjaDeepOT)",
-    buttons=[
+    buttons = [
          [Button.url("CREATOR👑", "t.me/Lovedeep_ViRk")],
          ],
        )
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
-            message=f"Hi Master, It's Me {bot_id}, Your admin ! \nWhat You Wanna Do today ?",
-            buttons=[
+            message = f"Hi Master, It's Me {bot_id}, Your admin ! \nWhat You Wanna Do today ?",
+            buttons = [
                 [custom.Button.inline("Show Users 🔥", data="users")],
                 [custom.Button.inline("Commands For admin", data="gibcmd")],
                 [
