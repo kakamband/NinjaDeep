@@ -40,12 +40,12 @@ async def start(event):
     bot_id = deepbot.first_name
     bot_username = deepbot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
-    firstname = replied_user.user.first_name
+    first_name = replied_user.user.first_name
     devlop = await bot.get_me()
-    hmmwow = devlop.first_name
+    Name = Config.ALIVE_NAME
     vent = event.chat_id
     mypic = Config.ALIVE_PIC
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [NinjaDeep Userbot](t.me/NinjaDeepOT)"
+    starttext = f"Hello, {first_name} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{Name}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [NinjaDeep Userbot](t.me/NinjaDeepOT)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
