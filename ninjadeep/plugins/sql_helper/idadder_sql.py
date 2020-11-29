@@ -42,8 +42,9 @@ def get_all_users():
 
 def already_added(chat_id):
     try:
-        return SESSION.query(Moidata).filter(Moidata.chat_id == str(chat_id)).one()
-    except:
+        return SESSION.query(Moidata).filter(
+            Moidata.chat_id == str(chat_id)).one()
+    except BaseException:
         return None
     finally:
         SESSION.close()
