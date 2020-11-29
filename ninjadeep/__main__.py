@@ -52,7 +52,7 @@ print("NinjaDeep has been deployed! ")
 
 print("Setting up NinjaTGBot")
 
-path = "ninjadeep/plugins/mybot/*.py"
+path = "ninjadeep/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
