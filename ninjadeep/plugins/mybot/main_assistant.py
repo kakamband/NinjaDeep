@@ -44,8 +44,8 @@ async def start(event):
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
-            message = f"Hi Master, It's Me {bot_id}, Your admin ! \nWhat You Wanna Do today ?",
-            buttons = [
+            message=f"Hi Master, It's Me {bot_id}, Your admin ! \nWhat You Wanna Do today ?",
+            buttons=[
                 [custom.Button.inline("Show Users 🔥", data="users")],
                 [custom.Button.inline("Commands For admin", data="gibcmd")],
                 [
@@ -67,7 +67,7 @@ async def start(event):
             buttons=[
                 [custom.Button.inline("Deploy your NinjaDeep 🇮🇳", data="deploy")],
                 [Button.url("Help Me ❓", "t.me/NinjaDeepot")],
-           ],
+            ],
         )
 
 
@@ -176,8 +176,9 @@ async def sedlyfsir(event):
             await asyncio.sleep(0.2)
         except Exception as e:
             try:
-                logger.info(f"Error : {error_count}\nError : {e} \nUsers : {chat_id}")
-            except:
+                logger.info(
+                    f"Error : {error_count}\nError : {e} \nUsers : {chat_id}")
+            except BaseException:
                 pass
     await tgbot.send_message(
         event.chat_id,
@@ -191,13 +192,13 @@ async def deepvirk(event):
     deepvirk = get_all_users()
     await event.reply(
         f"**tele = f"NinjaDeep Version: {ninja_version}\n"
-tele += f"Log Group: {log}\n"
-tele += f"admin Bot: {bots}\n"
-tele += f"Lydia: {lyd}\n"
-tele += f"Sudo: {sudo}\n"
-tele += f"PMSecurity: {pm}\n"
-tele += f"\nVisit @NinjaDeepSupport for assistance.\n"
-telestats = f"{tele}"
+        tele += f"Log Group: {log}\n"
+        tele += f"admin Bot: {bots}\n"
+        tele += f"Lydia: {lyd}\n"
+        tele += f"Sudo: {sudo}\n"
+        tele += f"PMSecurity: {pm}\n"
+        tele += f"\nVisit @NinjaDeepSupport for assistance.\n"
+        telestats=f"{tele}"
     )
 
 
