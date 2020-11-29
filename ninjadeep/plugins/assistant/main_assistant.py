@@ -178,7 +178,7 @@ async def sedlyfsir(event):
     error_count = 0
     sent_count = 0
     hmmok = ""
-    if msgtobroadcast == None:
+    if msgtobroadcast is None:
         await event.reply("`Wait. What? Broadcast None?`")
         return
     elif msgtobroadcast == " ":
