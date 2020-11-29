@@ -40,11 +40,7 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull admin Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own admin You Can Deploy From Button Below. \n\nPowered By [NinjaDeep🇮🇳](t.me/NinjaDeepOT)",
-    buttons = [
-         [Button.url("CREATOR👑", "t.me/Lovedeep_ViRk")],
-         ],
-       )
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull admin Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own admin You Can Deploy From Button Below. \n\nPowered By [NinjaDeep🇮🇳](t.me/NinjaDeepOT)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
