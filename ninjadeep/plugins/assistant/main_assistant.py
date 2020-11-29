@@ -41,7 +41,7 @@ async def start(event):
     bot_username = deepbot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     first_name = replied_user.user.first_name
-    devlop = await bot.get_me()
+    await bot.get_me()
     Name = Config.ALIVE_NAME
     vent = event.chat_id
     mypic = Config.ALIVE_PIC
