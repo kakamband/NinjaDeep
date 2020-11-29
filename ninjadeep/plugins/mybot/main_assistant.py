@@ -243,3 +243,78 @@ async def deepvirk(event):
         await tgbot.send_message(
             user_id, "Congo! You Have Been Unblacklisted By My Master."
         )
+#    Copyright (C) Midhun KM 2020
+
+#    This program is free software: you can redistribute it and/or modify
+
+#    it under the terms of the GNU Affero General Public License as published by
+
+#    the Free Software Foundation, either version 3 of the License, or
+
+#
+
+#    This program is distributed in the hope that it will be useful,
+
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+#    GNU Affero General Public License for more details.
+
+#
+
+#    You should have received a copy of the GNU Affero General Public License
+
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+import asyncio
+
+import io
+
+import os
+
+import re
+
+from telethon import Button, custom, events
+
+from telethon.tl.functions.users import GetFullUserRequest
+
+from fridaybot import bot
+
+from fridaybot.Configs import Config
+
+from fridaybot.modules.sql_helper.blacklist_assistant import (
+
+    add_nibba_in_db,
+
+    is_he_added,
+
+    removenibba,
+
+)
+
+from fridaybot.modules.sql_helper.botusers_sql import add_me_in_db, his_userid
+
+from fridaybot.modules.sql_helper.idadder_sql import (
+
+    add_usersid_in_db,
+
+    already_added,
+
+    get_all_users,
+
+)
+
+@assistant_cmd("start", is_args=False)
+
+async def start(event):
+
+    starkbot = await tgbot.get_me()
+
+    bot_id = starkbot.first_name
+
+    bot_username = starkbot.username
+
+    replied_user = await event.client(GetFullUserRequest(event.sender_id))
+
+    firstname = replied_user.user.first_nam
