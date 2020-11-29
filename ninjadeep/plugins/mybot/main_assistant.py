@@ -19,7 +19,7 @@ from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
 from ninjadeep import bot
-from ninjadeep.plugins.sql_helper.blacklist_admin import (
+from ninjadeep.plugins.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
