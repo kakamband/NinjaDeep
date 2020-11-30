@@ -403,7 +403,6 @@ def sudo_cmd(pattern=None, **args):
         del args["allow_sudo"]
 
     def assistant_cmd(add_cmd, is_args=False):
-
     def cmd(func):
         serena = bot.tgbot
         if is_args:
@@ -411,11 +410,14 @@ def sudo_cmd(pattern=None, **args):
         elif is_args == "stark":
             pattern = bothandler + add_cmd + " (.*)"
         elif is_args == "snips":
-            pattern = bothandler + add_cmd + r" (\S+)"
+            pattern = bothandler + add_cmd + " (\S+)"
         else:
             pattern = bothandler + add_cmd + "$"
         serena.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return cmd
 
     def is_admin():
     def decorator(func):
