@@ -356,7 +356,7 @@ def sudo_cmd(pattern=None, **args):
         serena = bot.tgbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
-        elif is_args == "virk":
+        elif is_args == "stark":
             pattern = bothandler + add_cmd + " (.*)"
         elif is_args == "snips":
             pattern = bothandler + add_cmd + " (\S+)"
