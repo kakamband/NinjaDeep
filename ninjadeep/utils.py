@@ -350,6 +350,20 @@ def sudo_cmd(pattern=None, **args):
         # Mutually exclusive with outgoing (can only set one of either).
         args["incoming"] = True
         del args["allow_sudo"]
+        
+   def assistant_cmd(add_cmd, is_args=False):
+    def cmd(func):
+        serena = bot.tgbot
+        if is_args:
+            pattern = bothandler + add_cmd + "(?: |$)(.*)"
+        elif is_args == "virk":
+            pattern = bothandler + add_cmd + " (.*)"
+        elif is_args == "snips":
+            pattern = bothandler + add_cmd + " (\S+)"
+        else:
+            pattern = bothandler + add_cmd + "$"
+        serena.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
 
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
