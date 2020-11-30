@@ -393,8 +393,8 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"ninjadeep/plugins/assitant/{shortname}.py")
-        name = "ninjadeep.plugins.assitant.{}".format(shortname)
+        path = Path(f"ninjadeep/plugins/assistant/{shortname}.py")
+        name = "ninjadeep.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -405,11 +405,11 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"ninjadeep/plugins/assitant/{shortname}.py")
+        path = Path(f"ninjadeep/plugins/assistant/{shortname}.py")
         name = "ninjadeep.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["ninjadeep.plugins.assitant" + shortname] = mod
+        sys.modules["ninjadeep.plugins.assistant" + shortname] = mod
         print("NinjaTGBot Has imported " + shortname)
