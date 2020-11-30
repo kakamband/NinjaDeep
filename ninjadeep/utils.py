@@ -351,7 +351,7 @@ def sudo_cmd(pattern=None, **args):
         args["incoming"] = True
         del args["allow_sudo"]
 
-   def assistant_cmd(add_cmd, is_args=False):
+    def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
         serena = bot.tgbot
         if is_args:
