@@ -34,7 +34,7 @@ from ninjadeep.plugins.sql_helper.idadder_sql import (
 )
 
 
-@assistant_cmd("start", is_args=False)
+@admin_cmd("start", is_args=False)
 async def start(event):
     deepbot = await tgbot.get_me()
     bot_id = deepbot.first_name
@@ -170,7 +170,7 @@ async def sed(event):
             )
 
 
-@assistant_cmd("broadcast", is_args=True)
+@admin_cmd("broadcast", is_args=True)
 @god_only
 async def sedlyfsir(event):
     msgtobroadcast = event.pattern_match.group(1)
@@ -202,7 +202,7 @@ async def sedlyfsir(event):
     )
 
 
-@assistant_cmd("stats", is_args=False)
+@admin_cmd("stats", is_args=False)
 @peru_only
 async def starkisnoob(event):
     starkisnoob = get_all_users()
@@ -211,14 +211,14 @@ async def starkisnoob(event):
     )
 
 
-@assistant_cmd("help", is_args=False)
+@admin_cmd("help", is_args=False)
 @peru_only
 async def starkislub(event):
     grabonx = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
     await event.reply(grabonx)
 
 
-@assistant_cmd("block", is_args=False)
+@admin_cmd("block", is_args=False)
 @god_only
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
@@ -236,7 +236,7 @@ async def starkisnoob(event):
         )
 
 
-@assistant_cmd("unblock", is_args=False)
+@admin_cmd("unblock", is_args=False)
 @god_only
 async def starkisnoob(event):
     if event.sender_id == bot.uid:
