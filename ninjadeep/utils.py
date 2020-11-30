@@ -350,7 +350,7 @@ def sudo_cmd(pattern=None, **args):
         # Mutually exclusive with outgoing (can only set one of either).
         args["incoming"] = True
         del args["allow_sudo"]
-        
+
    def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
         serena = bot.tgbot
