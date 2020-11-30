@@ -352,6 +352,7 @@ def sudo_cmd(pattern=None, **args):
         del args["allow_sudo"]
 
     def assistant_cmd(add_cmd, is_args=False):
+
     def cmd(func):
         serena = bot.tgbot
         if is_args:
@@ -359,20 +360,20 @@ def sudo_cmd(pattern=None, **args):
         elif is_args == "stark":
             pattern = bothandler + add_cmd + " (.*)"
         elif is_args == "snips":
-            pattern = bothandler + add_cmd + " (\S+)"
+            pattern = bothandler + add_cmd + r" (\S+)"
         else:
             pattern = bothandler + add_cmd + "$"
         serena.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
-            
+
     def is_admin():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
-            sed = await serena.get_permissions(event.chat_id, event.sender_id)
-            user = event.sender_id
-            kek = bot.uid
+            serena=bot.tgbot
+            sed=await serena.get_permissions(event.chat_id, event.sender_id)
+            user=event.sender_id
+            kek=bot.uid
             if sed.is_admin:
                 await func(event)
             if event.sender_id == kek:
@@ -389,11 +390,11 @@ def sudo_cmd(pattern=None, **args):
 
 def is_bot_admin():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
-            pep = await serena.get_me()
-            sed = await serena.get_permissions(event.chat_id, pep)
+            serena=bot.tgbot
+            pep=await serena.get_me()
+            sed=await serena.get_permissions(event.chat_id, pep)
             if sed.is_admin:
                 await func(event)
             else:
@@ -406,10 +407,10 @@ def is_bot_admin():
 
 def only_pro():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
-            kek = list(Config.SUDO_USERS)
-            mm = bot.uid
+            kek=list(Config.SUDO_USERS)
+            mm=bot.uid
             if event.sender_id == mm:
                 await func(event)
             elif event.sender_id == kek:
@@ -424,9 +425,9 @@ def only_pro():
 
 def god_only():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
-            moms = bot.uid
+            moms=bot.uid
             if event.sender_id == moms:
                 await func(event)
             else:
@@ -439,7 +440,7 @@ def god_only():
 
 def only_groups():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
             if event.is_group:
                 await func(event)
@@ -453,7 +454,7 @@ def only_groups():
 
 def only_group():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
             if event.is_group:
                 await func(event)
@@ -467,10 +468,10 @@ def only_group():
 
 def peru_only():
     def decorator(func):
-        @functools.wraps(func)
+        @ functools.wraps(func)
         async def wrapper(event):
-            kek = list(Config.SUDO_USERS)
-            mm = bot.uid
+            kek=list(Config.SUDO_USERS)
+            mm=bot.uid
             if event.sender_id == mm:
                 await func(event)
             elif event.sender_id == kek:
@@ -484,7 +485,7 @@ def peru_only():
 
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
-        args["outgoing"] = True
+        args["outgoing"]=True
 
     # add blacklist chats, UB should not respond in these chats
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
@@ -498,7 +499,7 @@ def peru_only():
 
 async def edit_or_reply(event, text):
     if event.sender_id in Config.SUDO_USERS:
-        reply_to = await event.get_reply_message()
+        reply_to=await event.get_reply_message()
         if reply_to:
             return await reply_to.reply(text)
         return await event.reply(text)
@@ -507,7 +508,7 @@ async def edit_or_reply(event, text):
 
 async def eor(event, text):
     if event.sender_id in Config.SUDO_USERS:
-        reply_to = await event.get_reply_message()
+        reply_to=await event.get_reply_message()
         if reply_to:
             return await reply_to.reply(text)
         return await event.reply(text)
@@ -524,10 +525,10 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"ninjadeep/plugins/assistant/{shortname}.py")
-        name = "ninjadeep.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
-        mod = importlib.util.module_from_spec(spec)
+        path=Path(f"ninjadeep/plugins/assistant/{shortname}.py")
+        name="ninjadeep.plugins.assistant.{}".format(shortname)
+        spec=importlib.util.spec_from_file_location(name, path)
+        mod=importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Initialising TGBot.")
         print("NinjaTGBot - Imported " + shortname)
@@ -536,11 +537,11 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"ninjadeep/plugins/assistant/{shortname}.py")
-        name = "ninjadeep.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
-        mod = importlib.util.module_from_spec(spec)
-        mod.tgbot = bot.tgbot
+        path=Path(f"ninjadeep/plugins/assistant/{shortname}.py")
+        name="ninjadeep.plugins.assistant.{}".format(shortname)
+        spec=importlib.util.spec_from_file_location(name, path)
+        mod=importlib.util.module_from_spec(spec)
+        mod.tgbot=bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["ninjadeep.plugins.assistant" + shortname] = mod
+        sys.modules["ninjadeep.plugins.assistant" + shortname]=mod
         print("NinjaTGBot Has imported " + shortname)
