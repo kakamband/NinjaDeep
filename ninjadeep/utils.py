@@ -364,6 +364,123 @@ def sudo_cmd(pattern=None, **args):
             pattern = bothandler + add_cmd + "$"
         serena.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
+            
+    def is_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            serena = bot.tgbot
+            sed = await serena.get_permissions(event.chat_id, event.sender_id)
+            user = event.sender_id
+            kek = bot.uid
+            if sed.is_admin:
+                await func(event)
+            if event.sender_id == kek:
+                pass
+            elif not user:
+                pass
+            if not sed.is_admin:
+                await event.reply("Only Admins Can Use it.")
+
+        return wrapper
+
+    return decorator
+
+
+def is_bot_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            serena = bot.tgbot
+            pep = await serena.get_me()
+            sed = await serena.get_permissions(event.chat_id, pep)
+            if sed.is_admin:
+                await func(event)
+            else:
+                await event.reply("I Must Be Admin To Do This.")
+
+        return wrapper
+
+    return decorator
+
+
+def only_pro():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
+                await func(event)
+            else:
+                await event.reply("Only Owners, Sudo Users Can Use This Command.")
+
+        return wrapper
+
+    return decorator
+
+
+def god_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            moms = bot.uid
+            if event.sender_id == moms:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def only_groups():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                await event.reply("This Command Only Works On Groups.")
+
+        return wrapper
+
+    return decorator
+
+
+def only_group():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def peru_only():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            mm = bot.uid
+            if event.sender_id == mm:
+                await func(event)
+            elif event.sender_id == kek:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
 
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
