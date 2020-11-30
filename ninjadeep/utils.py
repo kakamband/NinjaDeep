@@ -4,6 +4,13 @@ from ninjadeep import bot
 from telethon import events
 from pathlib import Path
 from ninjadeep.ninjadeepConfig import Var, Config
+from ninjadeep.wraptools import (
+    am_i_admin,
+    ignore_bot,
+    ignore_fwd,
+    ignore_grp,
+    ignore_pm,
+)
 from ninjadeep import LOAD_PLUG
 from ninjadeep import CMD_LIST
 import re
