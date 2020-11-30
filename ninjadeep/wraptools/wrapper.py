@@ -13,9 +13,12 @@
 
 
 import functools
+import re
 
+from telethon import events
 
-from ninjadeep import bot
+from fridaybot import bot
+from fridaybot.Configs import Config, Var
 
 
 def ignore_fwd():
