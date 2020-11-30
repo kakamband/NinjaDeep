@@ -1,7 +1,6 @@
 # NinjaDeep ~ UserBot
-Copyright (c) Lovedeep-ViRk
-
- import os
+import os
+Copyright(c) Lovedeep - ViRk
 
 
 class Var(object):
