@@ -9,7 +9,7 @@ from ninjadeep import CMD_LIST
 import re
 import logging
 import inspect
-
+import functools
 handler = Config.CMD_HNDLR if Config.CMD_HNDLR else r"\."
 sudo_hndlr = Config.SUDO_HNDLR if Config.SUDO_HNDLR else "!"
 
