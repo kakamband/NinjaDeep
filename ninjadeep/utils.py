@@ -403,7 +403,6 @@ def sudo_cmd(pattern=None, **args):
         del args["allow_sudo"]
 
     def assistant_cmd(add_cmd, is_args=False):
-
     def cmd(func):
         serena = bot.tgbot
         if is_args:
